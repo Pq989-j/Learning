@@ -1,7 +1,7 @@
 // Diagnóstico de lógica JS
 //
 // Implementa cada función para que su test pase (verde).
-// Hazlas en orden, de la 1 a la 10. Si una se te atasca del todo, déjala
+// Hazlas en orden, de la 1 a la 10. Si una se te atasca del , déjala
 // vacía y pasa a la siguiente: es mejor dato que no perder media hora.
 //
 // Lee el README.md antes de empezar.
@@ -10,7 +10,8 @@
 // Devuelve el doble de n.
 // Ejemplos: doble(4) -> 8,  doble(-3) -> -6
 export const doble = (n) => {
-  
+  const double = n * 2;
+  return double;
 };
 
 // 2 · esMayorDeEdad(edad)
@@ -18,9 +19,9 @@ export const doble = (n) => {
 // Ejemplos: esMayorDeEdad(18) -> true,  esMayorDeEdad(17) -> false
 export const esMayorDeEdad = (edad) => {
   if (edad >= 18) {
-    return true
+    return true;
   }else{
-    return false
+    return false;
   }
 };
 
@@ -29,9 +30,9 @@ export const esMayorDeEdad = (edad) => {
 // Ejemplos: esPasswordSegura("123456") -> true,  esPasswordSegura("12345") -> false
 export const esPasswordSegura = (password) => {
   if (password.length >= 6){
-    return true
+    return true;
   }else {
-    return false
+    return false;
   }
 };
 
@@ -42,9 +43,9 @@ export const clasificaTemp = (grados) => {
   if(grados < 20){
     return "frío"
   }else if (grados =>20){
-    return "calor"
+    return "calor";
   }
-  // TODO
+  // 
 };
 
 // 5 · esAdolescente(edad)
@@ -52,9 +53,9 @@ export const clasificaTemp = (grados) => {
 // Ejemplos: esAdolescente(15) -> true,  esAdolescente(18) -> false,  esAdolescente(12) -> false
 export const esAdolescente = (edad) => {
   if(edad >=13 && edad <=17){
-    return true
+    return true;
   }else if(edad <13 || edad > 17){
-    return false
+    return false;
   }
 };
 
@@ -68,9 +69,9 @@ export const esAdolescente = (edad) => {
 export const nota = (puntos) => {
   if(puntos < 5){
     return "suspenso"
-  }else if(puntos >= 5 && puntos < 7){
+  }else if(puntos < 7){
     return "aprobado"
-  }else if(puntos >= 7 && puntos <= 8){
+  }else if(puntos <= 8){
     return "notable"
   }else{
     return "sobresaliente"
@@ -81,28 +82,46 @@ export const nota = (puntos) => {
 // Devuelve true si el texto contiene el carácter "@".
 // Ejemplos: tieneArroba("a@b.com") -> true,  tieneArroba("hola") -> false
 export const tieneArroba = (email) => {
-  // TODO
+  return email.includes("@");
 };
 
 // 8 · cuentaPares(numeros)
 // Recibe un array de números y devuelve CUÁNTOS son pares.
 // Ejemplos: cuentaPares([1, 2, 3, 4]) -> 2,  cuentaPares([1, 3, 5]) -> 0
 export const cuentaPares = (numeros) => {
-  
+
+
+  let pares = 0;
+
+  for (let i = 0; i < numeros.length; i++) 
+    if (numeros[i] % 2 === 0) {
+      pares++;
+    }
+  return pares;
+
 };
 
 // 9 · sumaArray(numeros)
-// Recibe un array de números y devuelve la suma de todos.
+// Recibe un array de números y devuelve la suma de s.
 // Un array vacío suma 0.
 // Ejemplos: sumaArray([1, 2, 3]) -> 6,  sumaArray([]) -> 0
 export const sumaArray = (numeros) => {
-  // TODO
+  let suma = 0;
+  for (let i = 0; i < numeros.length; i++)
+  suma = suma + numeros[i];
+  return suma
 };
 
 // 10 · todosPositivos(numeros)
-// Devuelve true si TODOS los números del array son positivos (mayores que 0).
+// Devuelve true si S los números del array son positivos (mayores que 0).
 // Un array vacío devuelve true (ninguno incumple la regla).
-// Ejemplos: todosPositivos([1, 2, 3]) -> true,  todosPositivos([1, -2, 3]) -> false
+// Ejemplos: sPositivos([1, 2, 3]) -> true,  sPositivos([1, -2, 3]) -> false
 export const todosPositivos = (numeros) => {
-  // TODO
+
+  for (let i = 0; i < numeros.length; i++){
+    if(numeros[i] <= 0){
+      return false;
+    }
+  }
+  return true;
 };
